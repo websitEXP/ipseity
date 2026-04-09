@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from '@/components/HeroSection';
+import PoemCard from '@/components/PoemCard';
+import { getFeaturedPoems } from '@/data/poems';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const featured = getFeaturedPoems();
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main>
+      <HeroSection />
+
+      {/* Featured poems section */}
+      <section className="relative py-16 md:py-24">
+        <div className="parchment absolute inset-0" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          <h2 className="font-heading text-3xl md:text-4xl text-forest text-center mb-2 font-light">
+            Featured Poems
+          </h2>
+          <p className="font-body text-center text-forest/50 italic mb-12">
+            a few words plucked from the seasons
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {featured.map(poem => (
+              <PoemCard key={poem.id} poem={poem} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
