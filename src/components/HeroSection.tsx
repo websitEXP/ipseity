@@ -11,13 +11,6 @@ const backgrounds: Record<Season, string> = {
   winter: winterBg,
 };
 
-const heroText: Record<Season, string> = {
-  spring: 'where new words bloom from old wounds',
-  summer: 'burning through the silence like golden light',
-  autumn: 'beauty grows even in the ruins',
-  winter: 'in the stillness, the poem finds you',
-};
-
 const HeroSection = () => {
   const { season } = useSeason();
 
@@ -35,7 +28,6 @@ const HeroSection = () => {
             alt={`${s} background`}
             className="w-full h-full object-cover"
           />
-          {/* Dark gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         </div>
       ))}
@@ -48,9 +40,19 @@ const HeroSection = () => {
         <p className="signature text-xl md:text-2xl text-cream/80 mt-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           ons ferjani
         </p>
-        <p className="font-body text-base md:text-lg text-cream/60 mt-8 max-w-xl italic animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          {heroText[season]}
-        </p>
+
+        {/* Hero quote from "I am a poet" */}
+        <div className="mt-10 max-w-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
+            I am a poet
+          </p>
+          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
+            too tender to stay untouched,
+          </p>
+          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
+            too fierce to stay unseen.
+          </p>
+        </div>
       </div>
     </section>
   );

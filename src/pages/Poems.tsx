@@ -1,10 +1,29 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { poems, getPoemById } from '@/data/poems';
-import { Season, seasonEmoji, useSeason } from '@/context/SeasonContext';
+import { Season, useSeason } from '@/context/SeasonContext';
 import PoemCard from '@/components/PoemCard';
+import SeasonIllustration, { SeasonBadge } from '@/components/SeasonIllustration';
+import springBg from '@/assets/spring-bg.jpg';
+import summerBg from '@/assets/summer-bg.jpg';
+import autumnBg from '@/assets/autumn-bg.jpg';
+import winterBg from '@/assets/winter-bg.jpg';
+
+const backgrounds: Record<Season, string> = {
+  spring: springBg,
+  summer: summerBg,
+  autumn: autumnBg,
+  winter: winterBg,
+};
 
 const seasons: (Season | 'all')[] = ['all', 'spring', 'summer', 'autumn', 'winter'];
+
+const seasonTint: Record<string, string> = {
+  spring: 'bg-[hsl(10_50%_68%/0.04)]',
+  summer: 'bg-[hsl(40_90%_60%/0.05)]',
+  autumn: 'bg-[hsl(30_60%_50%/0.04)]',
+  winter: 'bg-[hsl(210_30%_80%/0.06)]',
+};
 
 const PoemsPage = () => {
   const [filter, setFilter] = useState<Season | 'all'>('all');
@@ -28,13 +47,20 @@ const PoemsPage = () => {
             <button
               key={s}
               onClick={() => setFilter(s)}
-              className={`font-heading text-sm tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-300 ${
+              className={`font-heading text-sm tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 ${
                 filter === s
                   ? 'bg-forest text-cream'
                   : 'bg-cream-dark/50 text-forest/60 hover:bg-cream-dark hover:text-forest'
               }`}
             >
-              {s === 'all' ? '✦ All' : `${seasonEmoji[s]} ${s}`}
+              {s === 'all' ? (
+                '✦ All'
+              ) : (
+                <>
+                  <SeasonIllustration season={s} size="sm" />
+                  {s}
+                </>
+              )}
             </button>
           ))}
         </div>
@@ -66,24 +92,37 @@ const PoemDetail = () => {
     );
   }
 
-  return (
-    <main className="min-h-screen pt-24 pb-16">
-      <div className="parchment absolute inset-0 -z-10" />
+  const bg = backgrounds[poem.season];
 
-      <div className="max-w-2xl mx-auto px-6">
-        <Link to="/poems" className="font-body text-sm text-forest/50 hover:text-forest transition-colors mb-8 inline-block">
+  return (
+    <main className="min-h-screen pt-24 pb-16 relative">
+      {/* Season background - blurred */}
+      <div className="fixed inset-0 -z-20">
+        <img src={bg} alt="" className="w-full h-full object-cover blur-sm scale-105" />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      <div className="max-w-2xl mx-auto px-6 relative z-10">
+        <Link to="/poems" className="font-body text-sm text-cream/70 hover:text-cream transition-colors mb-8 inline-block">
           ← back to poems
         </Link>
 
-        <article className="parchment rounded-lg shadow-xl p-8 md:p-12">
+        <article className={`parchment rounded-2xl shadow-2xl p-8 md:p-12 ${seasonTint[poem.season]}`}>
           {/* Top illustration */}
-          <div className="text-center text-4xl opacity-40 mb-6">
-            {seasonEmoji[poem.season]}
+          <div className="flex justify-center mb-6">
+            <SeasonIllustration season={poem.season} size="lg" />
           </div>
 
-          <h1 className="font-heading text-3xl md:text-4xl text-forest text-center mb-8 font-semibold">
+          <h1 className="font-heading text-3xl md:text-4xl text-forest text-center mb-4 font-semibold">
             {poem.title}
           </h1>
+
+          {/* Decorative divider */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="h-px w-12 bg-forest/15" />
+            <div className="w-1.5 h-1.5 rounded-full bg-forest/20" />
+            <div className="h-px w-12 bg-forest/15" />
+          </div>
 
           <div className="space-y-1">
             {poem.lines.map((line, i) => (
@@ -98,7 +137,14 @@ const PoemDetail = () => {
             ))}
           </div>
 
-          <p className="signature text-xl text-rosy text-center mt-10">
+          {/* Decorative divider */}
+          <div className="flex items-center justify-center gap-3 mt-8 mb-4">
+            <div className="h-px w-8 bg-forest/10" />
+            <div className="w-1 h-1 rounded-full bg-forest/15" />
+            <div className="h-px w-8 bg-forest/10" />
+          </div>
+
+          <p className="signature text-xl text-rosy text-center">
             — ons ferjani
           </p>
         </article>
