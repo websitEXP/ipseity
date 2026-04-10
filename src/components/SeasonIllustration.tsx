@@ -62,7 +62,6 @@ const SeasonIllustration = ({ season, className = '', size = 'md' }: SeasonIllus
           </g>
         )}
         {season === 'winter' && (
-          /* Snowflake crystal */}
           <g stroke="hsl(var(--foreground))" strokeWidth="0.7" strokeLinecap="round" opacity="0.5">
             {/* Main axes */}
             <line x1="24" y1="6" x2="24" y2="42" />
