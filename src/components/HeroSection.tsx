@@ -28,31 +28,23 @@ const HeroSection = () => {
             alt={`${s} background`}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/65" />
         </div>
       ))}
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-cream font-light tracking-wide leading-tight max-w-4xl animate-fade-in">
+        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-cream font-light tracking-[0.08em] leading-tight max-w-4xl animate-fade-in">
           somehow everything is poetic
         </h1>
-        <p className="signature text-xl md:text-2xl text-cream/80 mt-4 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+
+        <p className="signature text-xl md:text-2xl text-rosy mt-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
           ons ferjani
         </p>
 
-        {/* Hero quote from "I am a poet" */}
-        <div className="mt-10 max-w-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
-            I am a poet
-          </p>
-          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
-            too tender to stay untouched,
-          </p>
-          <p className="font-body text-base md:text-lg text-cream/70 italic leading-relaxed">
-            too fierce to stay unseen.
-          </p>
-        </div>
+        <p className="font-body text-sm md:text-base text-cream/70 italic leading-relaxed mt-8 max-w-md animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          I am a poet — too tender to stay untouched, too fierce to stay unseen.
+        </p>
       </div>
     </section>
   );

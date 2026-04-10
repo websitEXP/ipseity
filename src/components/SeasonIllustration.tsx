@@ -8,10 +8,10 @@ interface SeasonIllustrationProps {
 
 /** Delicate SVG botanical illustrations per season — no emojis */
 const SeasonIllustration = ({ season, className = '', size = 'md' }: SeasonIllustrationProps) => {
-  const dims = size === 'sm' ? 'w-6 h-6' : size === 'lg' ? 'w-16 h-16' : 'w-10 h-10';
+  const dims = size === 'sm' ? 'w-6 h-6' : size === 'lg' ? 'w-20 h-20' : 'w-10 h-10';
 
   return (
-    <div className={`${dims} ${className} opacity-50`}>
+    <div className={`${dims} ${className} ${size === 'lg' ? 'opacity-85' : 'opacity-60'}`}>
       <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
         {season === 'spring' && (
           /* Delicate wildflower stem */

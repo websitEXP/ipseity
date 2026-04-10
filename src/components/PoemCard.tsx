@@ -28,7 +28,7 @@ const PoemCard = ({ poem }: PoemCardProps) => {
         <div className="px-5 pb-5 pt-3">
           <SeasonBadge season={poem.season} className="mb-2" />
 
-          <h3 className="font-heading text-xl md:text-2xl text-forest font-semibold mb-3 group-hover:text-rosy transition-colors">
+          <h3 className="font-heading text-xl md:text-2xl text-forest font-semibold mb-3 group-hover:text-forest/80 transition-colors">
             {poem.title}
           </h3>
 

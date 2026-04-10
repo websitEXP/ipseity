@@ -98,7 +98,7 @@ const PoemDetail = () => {
     <main className="min-h-screen pt-24 pb-16 relative">
       {/* Season background - blurred */}
       <div className="fixed inset-0 -z-20">
-        <img src={bg} alt="" className="w-full h-full object-cover blur-sm scale-105" />
+        <img src={bg} alt="" className="w-full h-full object-cover blur-[12px] scale-110" />
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
