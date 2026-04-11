@@ -42,15 +42,15 @@ const Header = () => {
           ))}
 
           {/* Season selector */}
-          <div className="flex items-center gap-1 ml-4 bg-cream/10 backdrop-blur-sm rounded-full px-2 py-1">
+          <div className="flex items-center gap-1 ml-4 bg-cream/10 backdrop-blur-sm rounded-full px-2 py-1.5">
             {seasons.map(s => (
               <button
                 key={s}
                 onClick={() => setSeason(s)}
-                className={`text-base px-1.5 py-0.5 rounded-full transition-all duration-300 ${
+                className={`text-[32px] leading-none px-2 py-1 rounded-full transition-all duration-300 ${
                   season === s
-                    ? 'bg-cream/20 scale-110'
-                    : 'opacity-50 hover:opacity-80 hover:scale-105'
+                    ? 'bg-[#F7F4D5]/25 scale-110 opacity-100'
+                    : 'opacity-70 hover:opacity-90 hover:scale-105'
                 }`}
                 aria-label={`Switch to ${s}`}
               >
@@ -91,8 +91,8 @@ const Header = () => {
                 <button
                   key={s}
                   onClick={() => { setSeason(s); setMobileOpen(false); }}
-                  className={`text-xl px-2 py-1 rounded-full transition-all ${
-                    season === s ? 'bg-cream/20 scale-110' : 'opacity-50'
+                  className={`text-[32px] leading-none px-2 py-1 rounded-full transition-all ${
+                    season === s ? 'bg-[#F7F4D5]/25 scale-110 opacity-100' : 'opacity-70'
                   }`}
                 >
                   {seasonEmoji[s]}

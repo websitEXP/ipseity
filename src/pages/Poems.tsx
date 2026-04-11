@@ -30,14 +30,14 @@ const PoemsPage = () => {
   const filtered = filter === 'all' ? poems : poems.filter(p => p.season === filter);
 
   return (
-    <main className="min-h-screen pt-24 pb-16">
+    <main className="min-h-screen pt-20 pb-16">
       <div className="parchment absolute inset-0 -z-10" />
 
-      <div className="max-w-5xl mx-auto px-4">
-        <h1 className="font-heading text-4xl md:text-5xl text-forest text-center mb-2 font-light">
+      <div className="max-w-5xl mx-auto px-4 pt-6">
+        <h1 className="font-heading text-4xl md:text-5xl text-[#F7F4D5] text-center mb-2 font-light" style={{ color: '#F7F4D5' }}>
           Poems
         </h1>
-        <p className="font-body text-center text-forest/50 italic mb-10">
+        <p className="font-body text-center text-[#F7F4D5]/50 italic mb-6">
           words released from the ribcage
         </p>
 
@@ -49,8 +49,8 @@ const PoemsPage = () => {
               onClick={() => setFilter(s)}
               className={`font-heading text-sm tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-300 flex items-center gap-1.5 ${
                 filter === s
-                  ? 'bg-forest text-cream'
-                  : 'bg-cream-dark/50 text-forest/60 hover:bg-cream-dark hover:text-forest'
+                  ? 'bg-[#839958] text-[#F7F4D5]'
+                  : 'bg-[#0A3323] text-[#F7F4D5] hover:bg-[#0A3323]/80'
               }`}
             >
               {s === 'all' ? (
