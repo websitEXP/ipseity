@@ -42,15 +42,15 @@ const Header = () => {
           ))}
 
           {/* Season selector */}
-          <div className="flex items-center gap-1 ml-4 bg-cream/10 backdrop-blur-sm rounded-full px-2 py-1.5">
+          <div className="flex items-center gap-0.5 ml-4 bg-cream/10 backdrop-blur-sm rounded-full px-1.5 py-1">
             {seasons.map(s => (
               <button
                 key={s}
                 onClick={() => setSeason(s)}
-                className={`text-[32px] leading-none px-2 py-1 rounded-full transition-all duration-300 ${
+                className={`text-lg leading-none px-1.5 py-1 rounded-full transition-all duration-300 ${
                   season === s
-                    ? 'bg-[#F7F4D5]/25 scale-110 opacity-100'
-                    : 'opacity-70 hover:opacity-90 hover:scale-105'
+                    ? 'bg-[#F7F4D5]/25 scale-105 opacity-100'
+                    : 'opacity-70 hover:opacity-90'
                 }`}
                 aria-label={`Switch to ${s}`}
               >
