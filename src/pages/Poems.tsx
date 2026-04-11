@@ -95,14 +95,25 @@ const PoemDetail = () => {
   const bg = backgrounds[poem.season];
 
   return (
-    <main className="min-h-screen pt-24 pb-16 relative">
-      {/* Season background - blurred */}
-      <div className="fixed inset-0 -z-20">
-        <img src={bg} alt="" className="w-full h-full object-cover blur-[12px] scale-110" />
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+    <main
+      className="min-h-screen pt-24 pb-16 relative"
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Blurred dark overlay */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background: 'rgba(0, 0, 0, 0.45)',
+          backdropFilter: 'blur(12px)',
+          WebkitBackdropFilter: 'blur(12px)',
+        }}
+      />
 
-      <div className="max-w-2xl mx-auto px-6 relative z-10">
+      <div className="max-w-2xl mx-auto px-6 relative z-[1]">
         <Link to="/poems" className="font-body text-sm text-cream/70 hover:text-cream transition-colors mb-8 inline-block">
           ← back to poems
         </Link>
