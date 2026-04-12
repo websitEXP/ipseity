@@ -3,16 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { SeasonProvider } from "@/context/SeasonContext";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CatMascot from "@/components/CatMascot";
-import ParticleEffect from "@/components/ParticleEffect";
-import Index from "./pages/Index.tsx";
-import { PoemsPage, PoemDetail } from "./pages/Poems.tsx";
-import About from "./pages/About.tsx";
-import Contact from "./pages/Contact.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import { SeasonProvider } from "@/context/season-context";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import CatMascot from "@/components/cat-mascot";
+import ParticleEffect from "@/components/particle-effect";
+import Index from "./pages/index-page.tsx";
+import { PoemsPage, PoemDetail } from "./pages/poems.tsx";
+import About from "./pages/about.tsx";
+import Contact from "./pages/contact.tsx";
+import NotFound from "./pages/not-found.tsx";
 
 const queryClient = new QueryClient();
 

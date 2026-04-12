@@ -1,5 +1,5 @@
-import HeroSection from '@/components/HeroSection';
-import PoemCard from '@/components/PoemCard';
+import HeroSection from '@/components/hero-section';
+import PoemCard from '@/components/poem-card';
 import { getFeaturedPoems } from '@/data/poems';
 
 const Index = () => {
