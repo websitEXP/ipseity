@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { poems, getPoemById } from '@/data/poems';
-import { Season, useSeason } from '@/context/SeasonContext';
-import PoemCard from '@/components/PoemCard';
-import SeasonIllustration, { SeasonBadge } from '@/components/SeasonIllustration';
+import { Season, useSeason } from '@/context/season-context';
+import PoemCard from '@/components/poem-card';
+import SeasonIllustration, { SeasonBadge } from '@/components/season-illustration';
 import springBg from '@/assets/spring-bg.jpg';
 import summerBg from '@/assets/summer-bg.jpg';
 import autumnBg from '@/assets/autumn-bg.jpg';

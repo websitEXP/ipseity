@@ -1,5 +1,5 @@
 import { Poem } from '@/data/poems';
-import SeasonIllustration, { SeasonBadge } from '@/components/SeasonIllustration';
+import SeasonIllustration, { SeasonBadge } from '@/components/season-illustration';
 import { Link } from 'react-router-dom';
 
 interface PoemCardProps {

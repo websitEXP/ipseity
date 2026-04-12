@@ -1,4 +1,4 @@
-import { Season } from '@/context/SeasonContext';
+import { Season } from '@/context/season-context';
 
 export interface Poem {
   id: string;

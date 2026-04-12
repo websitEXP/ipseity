@@ -1,4 +1,4 @@
-import { useSeason, Season } from '@/context/SeasonContext';
+import { useSeason, Season } from '@/context/season-context';
 import springBg from '@/assets/spring-bg.jpg';
 import summerBg from '@/assets/summer-bg.jpg';
 import autumnBg from '@/assets/autumn-bg.jpg';
