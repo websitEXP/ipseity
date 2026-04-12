@@ -1,4 +1,4 @@
-import { useSeason, Season } from '@/context/SeasonContext';
+import { useSeason, Season } from '@/context/season-context';
 import { useEffect, useRef } from 'react';
 
 interface Particle {
