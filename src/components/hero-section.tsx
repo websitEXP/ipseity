@@ -35,7 +35,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-cream font-light tracking-[0.08em] leading-tight max-w-4xl animate-fade-in">
-          somehow everything is poetic
+          ipseity
         </h1>
 
         <p className="signature text-xl md:text-2xl text-rosy mt-10 animate-fade-in" style={{ animationDelay: '0.3s' }}>
