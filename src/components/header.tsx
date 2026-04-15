@@ -22,7 +22,7 @@ const Header = () => {
       <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="font-heading text-lg md:text-xl text-cream tracking-wide hover:opacity-80 transition-opacity">
-          ipseity
+          somehow everything is poetic
         </Link>
 
         {/* Desktop nav */}
