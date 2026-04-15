@@ -15,7 +15,7 @@ const Contact = () => {
   const { season } = useSeason();
 
   const links = [
-    { label: 'Instagram', url: '#', icon: '✦' },
+    { label: 'Instagram', url: 'https://www.instagram.com/ons_ferjani/?utm_source=ig_web_button_share_sheet', icon: '✦' },
     { label: 'Twitter / X', url: '#', icon: '✦' },
     { label: 'Email', url: 'mailto:hello@onsferjani.com', icon: '✦' },
   ];
