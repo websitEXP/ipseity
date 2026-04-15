@@ -46,7 +46,7 @@ const About = () => {
 
             <div className="mt-10 pt-6 border-t border-forest/10 text-center">
               <p className="font-body text-sm text-forest/40 italic">
-                "ipseity"
+                "somehow everything is poetic"
               </p>
             </div>
           </div>
